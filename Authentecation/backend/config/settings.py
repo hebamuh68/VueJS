@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-cm_u##cllho!yh=40_2)l3c7=jqpf@gt#a2)!gbk8uqg(q!fj8
 DEBUG = True
 
 ALLOWED_HOSTS = []
-CORS_ALLOWED_ORIGINS = ["<http://localhost:5173>",]
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173",]
 
 # Application definition
 
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'auth',
+    'accounts',
     'rest_framework',
     'corsheaders',
 ]
