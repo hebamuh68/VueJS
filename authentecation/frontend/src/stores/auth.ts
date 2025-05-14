@@ -47,4 +47,5 @@ export const useAuthStore = defineStore('auth', {
       authService.logout();
     },
   },
+  
 });

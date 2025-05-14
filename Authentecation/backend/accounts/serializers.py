@@ -6,10 +6,12 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        # Fields to include in the serialized output
-        fields = ('id', 'email', 'username', 'password')
-        # Make the password field write-only to prevent it from being exposed in responses
-        extra_kwargs = {'password': {'write_only': True}}
+        fields = ('id', 'email', 'username', 'password', 'first_name', 'last_name', 'date_joined')
+        extra_kwargs = {
+            'password': {'write_only': True},
+            'id': {'read_only': True},
+            'date_joined': {'read_only': True}
+        }
 
     # Override the create method to handle user creation with hashed passwords
     def create(self, validated_data):
